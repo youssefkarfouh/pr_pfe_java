@@ -14,6 +14,7 @@ import java.util.List;
 
 public class StudentController {
 
+    String test;
     private final static Logger LOGGER = LoggerFactory.getLogger(StudentController.class);
 
     private StudentService service;
