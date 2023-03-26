@@ -2,6 +2,9 @@ package ma.pfe.mappers;
 
 import ma.pfe.dtos.StudentDto;
 import ma.pfe.entities.StudentEntity;
+import ma.pfe.services.StudentServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,6 +13,8 @@ import java.util.stream.Collectors;
 
 @Component
 public class StudentMapper {
+
+    private final static Logger LOGGER = LoggerFactory.getLogger(StudentMapper.class);
 
     public StudentEntity convertToEntity(StudentDto dto){
 
@@ -38,6 +43,9 @@ public class StudentMapper {
     }
 
     public List<StudentDto> convertToDtos(List<StudentEntity> l_entities){
-        return l_entities.stream().map( s_entity ->  convertToDto(s_entity)).collect(Collectors.toList());
+
+        List<StudentDto> listDto =   l_entities.stream().map( s_entity ->  convertToDto(s_entity)).collect(Collectors.toList());
+        LOGGER.debug("sdsd" + listDto);
+        return listDto;
     }
 }

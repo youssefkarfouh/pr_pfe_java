@@ -1,12 +1,14 @@
 package ma.pfe.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Student")
+
 public class StudentEntity {
      @Id
-     private long id;
+     @GeneratedValue(strategy = GenerationType.AUTO) // generate auto id
+     private Long id;
      private String name;
 
     public long getId() {
