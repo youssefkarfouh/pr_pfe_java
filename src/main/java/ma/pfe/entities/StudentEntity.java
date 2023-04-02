@@ -6,10 +6,12 @@ import javax.persistence.*;
 @Table(name = "Student")
 
 public class StudentEntity {
-     @Id
-     @GeneratedValue(strategy = GenerationType.AUTO) // generate auto id
-     private Long id;
-     private String name;
+    @Id
+    @Column(name = "id_student")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    @Column(name = "name_student")
+    private String name;
 
     public long getId() {
         return id;

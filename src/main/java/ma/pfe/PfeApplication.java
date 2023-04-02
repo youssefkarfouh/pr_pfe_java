@@ -19,6 +19,7 @@ public class PfeApplication {
 
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(PfeApplication.class);
+
         Environment env = app.run(args).getEnvironment();
         LOGGER.info("Access URLs:\n----------------------------------------------------------\n\t" +
                         "Local: \t\thttp://127.0.0.1:{}/swagger-ui/#/\n\t" +

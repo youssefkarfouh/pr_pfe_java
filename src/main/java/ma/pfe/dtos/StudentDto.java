@@ -1,5 +1,6 @@
 package ma.pfe.dtos;
 
+
 public class StudentDto {
 
     private Long id;
@@ -21,11 +22,6 @@ public class StudentDto {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "StudentDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+
+
 }

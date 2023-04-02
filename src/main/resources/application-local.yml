@@ -11,9 +11,9 @@ spring:
     database: mysql
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 logging:
   level:
-    org.springframework.web: debug
+    org.springframework.web: DEBUG
     ma.pfe: DEBUG
-    org.hibernate: ERROR
+    org.hibernate: INFO

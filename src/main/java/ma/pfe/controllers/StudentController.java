@@ -1,5 +1,4 @@
 package ma.pfe.controllers;
-
 import ma.pfe.dtos.StudentDto;
 import ma.pfe.services.StudentService;
 import org.slf4j.Logger;
@@ -15,36 +14,38 @@ public class StudentController {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(StudentController.class);
 
+
     private StudentService studentService;
 
     public StudentController(StudentService service) {
         this.studentService = service;
     }
 
-    @PostMapping("/add")
-    public StudentDto save(@RequestBody StudentDto dto) {
+    @PostMapping
+    public Long save(@RequestBody StudentDto dto) {
 
-        LOGGER.debug("start methode save in controller");
+        LOGGER.debug("start methode save in controller : {} " , dto);
 
         return studentService.save(dto);
     }
 
-    @PutMapping("/update")
-    public Boolean update(@RequestBody StudentDto dto) {
+    @PutMapping
+    public Long update(@RequestBody StudentDto dto) {
         LOGGER.debug("start methode update in controller");
 
-        return true;
+        LOGGER.debug("start method update dto : {} ",dto);
+        return studentService.update(dto);
     }
 
 
-    @DeleteMapping("/delete/{id}")
-    public Boolean delete(@PathVariable("id") long id) {
+    @DeleteMapping("{id}")
+    public Boolean delete(@PathVariable("id") Long id) {
         LOGGER.debug("start methode delete in controller");
 
         return studentService.deleteById(id);
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public List<StudentDto> selectAll() {
 
         LOGGER.debug("start methode selectAll in controller");
