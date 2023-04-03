@@ -15,24 +15,24 @@ public class StudentServiceImpl implements StudentService {
     private final static Logger LOGGER= LoggerFactory.getLogger(StudentServiceImpl.class);
 
     private StudentRepository studentRepository;
-    private StudentMapper studentMapper;
+    private StudentMapper mapper;
 
     public StudentServiceImpl( StudentRepository studentRepository,StudentMapper studentMapper) {
         this.studentRepository = studentRepository;
-        this.studentMapper = studentMapper;
+        this.mapper = studentMapper;
     }
 
     @Override
     public Long save(StudentDto dto) {
         LOGGER.debug("start method save dto in service : {} ",dto);
-        StudentDto s_dto = studentMapper.studentEntityToDto(studentRepository.save(studentMapper.StudentDtoToEntity(dto)));
+        StudentDto s_dto = mapper.studentEntityToDto(studentRepository.save(mapper.StudentDtoToEntity(dto)));
         return s_dto.getId();
     }
 
     @Override
     public Long update(StudentDto dto) {
         LOGGER.debug("start method save dto : {} ",dto);
-        StudentDto s_dto = studentMapper.studentEntityToDto(studentRepository.save(studentMapper.StudentDtoToEntity(dto)));
+        StudentDto s_dto = mapper.studentEntityToDto(studentRepository.save(mapper.StudentDtoToEntity(dto)));
         return s_dto.getId();
     }
 
@@ -46,6 +46,6 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<StudentDto> selectAll() {
         LOGGER.debug("start method select All");
-        return studentMapper.studentEntiesToDtos(studentRepository.findAll());
+        return mapper.studentEntiesToDtos(studentRepository.findAll());
     }
 }
