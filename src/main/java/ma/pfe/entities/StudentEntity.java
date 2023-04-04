@@ -1,9 +1,10 @@
 package ma.pfe.entities;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Student")
+@Inheritance(strategy = InheritanceType.JOINED)
 
 public class StudentEntity {
 
@@ -14,21 +15,35 @@ public class StudentEntity {
     @Column(name = "name_student")
     private String name;
 
-//    to ovveride Adress column names
+    @ManyToMany(cascade = CascadeType.MERGE)
+
+    @JoinTable(name = "list_cours_students")
+    List<CoursEntity> courses;
+
+    //    to ovveride Adress column names
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "rue", column = @Column(name = "rue_student")),
             @AttributeOverride(name = "avenue", column = @Column(name = "avenu_student"))
     })
-    private Adresse adresse;
+    private AdresseEntity adresse;
 
 
-    public Adresse getAdresse() {
+    public AdresseEntity getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(Adresse adresse) {
+    public void setAdresse(AdresseEntity adresse) {
         this.adresse = adresse;
+
+    }
+
+    public List<CoursEntity> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<CoursEntity> courses) {
+        this.courses = courses;
     }
 
     public String getName() {
