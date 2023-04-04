@@ -20,7 +20,4 @@ public interface StudentMapper {
     StudentId studentIdDTOToStudentId(StudentIdDto studentIdDTO);
 
 
-
-
-
 }

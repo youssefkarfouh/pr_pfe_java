@@ -15,7 +15,7 @@ public class StudentEntity {
     @Column(name = "name_student")
     private String name;
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.PERSIST)
 
     @JoinTable(name = "list_cours_students")
     List<CoursEntity> courses;

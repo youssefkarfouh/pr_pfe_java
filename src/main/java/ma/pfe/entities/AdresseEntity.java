@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 public class AdresseEntity {
     private String rue ;
     private String avenue ;
-    private int number ;
+    private long number ;
 
     public String getRue() {
         return rue;
@@ -25,11 +25,11 @@ public class AdresseEntity {
         this.avenue = avenue;
     }
 
-    public int getNumber() {
+    public long getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(long number) {
         this.number = number;
     }
 

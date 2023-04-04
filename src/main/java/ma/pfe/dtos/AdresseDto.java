@@ -6,7 +6,7 @@ public class AdresseDto {
 
     private String avenue;
 
-    private String number;
+    private long number;
 
     public String getRue() {
         return rue;
@@ -24,11 +24,11 @@ public class AdresseDto {
         this.avenue = avenue;
     }
 
-    public String getNumber() {
+    public long getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(long number) {
         this.number = number;
     }
 

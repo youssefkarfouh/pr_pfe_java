@@ -2,7 +2,6 @@ package ma.pfe.dtos;
 
 public class CoursDto {
 
-
     private long id;
     private String name;
 
