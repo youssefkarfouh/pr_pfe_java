@@ -50,7 +50,6 @@ public class StudentController {
     public List<StudentDto> selectAll() {
 
         LOGGER.debug("start methode selectAll in controller");
-
         return studentService.selectAll();
     }
 

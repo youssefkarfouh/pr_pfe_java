@@ -1,10 +1,12 @@
 package ma.pfe.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
+@Entity
 public class CoursEntity {
 
     @Id
@@ -21,13 +23,12 @@ public class CoursEntity {
         this.id = id;
     }
 
-    public String getCours() {
+
+    public String getName() {
         return name;
     }
 
-    public void setCours(String name) {
+    public void setName(String name) {
         this.name = name;
     }
-
-
 }

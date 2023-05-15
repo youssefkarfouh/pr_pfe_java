@@ -49,6 +49,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<StudentDto> selectAll() {
         LOGGER.debug("start method select All");
+
         return mapper.studentEntiesToDtos(studentRepository.findAll());
     }
 
